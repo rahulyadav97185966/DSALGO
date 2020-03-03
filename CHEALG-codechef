@@ -1,0 +1,52 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        string sub;
+        cin>>s;
+        int k=s.length();
+        if(k>1)
+        {
+                for(int i=0;i<s.length();i++)
+                {
+                    int count=1;
+                    for(int j=i+1;j<=s.length();j++)
+                    {
+                        if(s[i]==s[j])
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                           sub +=s[i];
+                           sub += to_string(count);
+                           i=(j-1);
+                           break;
+                        }
+                    }
+                }
+                int l=sub.length();
+                if(l<k)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+
+
+    }
+    return 0;
+}
